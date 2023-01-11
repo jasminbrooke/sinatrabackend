@@ -64,4 +64,18 @@ class ApplicationController < Sinatra::Base
     product.destroy
     product.to_json
   end
+
+  # login
+
+  post '/login' do
+    current_user = User.find_by!(username: params[:username])
+    if current_user 
+      return {
+               user: current_user,
+               products: current_user.products
+             }.to_json
+    else
+      return { error: {:login=>"User not found"} }.to_json
+    end
+  end
 end
