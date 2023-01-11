@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
     has_many :products
 
-    validates :username, presence: true
+    validates :displayname, :username, presence: true
     validates :username, uniqueness: true
 end
