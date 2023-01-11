@@ -58,4 +58,10 @@ class ApplicationController < Sinatra::Base
     )
     product.to_json
   end
+
+  delete '/product/:id' do
+    product = Product.find(params[:id])
+    product.destroy
+    product.to_json
+  end
 end
