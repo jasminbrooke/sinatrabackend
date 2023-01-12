@@ -10,23 +10,7 @@ The API provides routes for the following actions:
 
 Build a Business is a single page application created using ruby, 
 sinatra and react. 
-Create your very own business planning organzier.
+Create your very own business planning organzier!
+Users will be able to create a unique username, allowing them to log back in at any time.
+Once logged in, users will be able to create products with details and pictures in the Create a Product sidebar. These details include, a name, an image, a category, a description, a cost and a sale price. The app will automatically calculate a profit using the cost and sale price. Once these products are created, they will appear in detailed cards to the side of the Create a Product form, including all submitted information. Some details will be hidden for a simplified look, but can be easily accessed by clicking on the down arrow on the bottom of the card. Products can be marked or unmarked as "Best Sellers" and/or "Available" at any time using the heart icon and price tag icon, respectively. Users will be able to edit, delete and filter products as needed. Products can be filtered by "Best Sellers" and "Available". Both filters can be removed with one click. Let Build a Business help you on your way to success! 
 
-The first thing you can do is to either log in or create a new user. 
-To create a new user, you can choose a name and a unique username to use for logging back in at a later time. 
-Once you have a username and are logged in, 
-you will be able to create a list of products you can sell. 
-There is a sidebar where you can create a product.
-Here you will be ale to enter the product's name, a category, add an image url, 
-and add a description. 
-You can also add the cost of materials and what you plan to sell it for, 
-and the app will tell you what the profit on that item will be, by automatically 
-subtracting the cost of materials from the sale price. 
-Once you submit, the product will be added to the database and will show up on the right in a card. 
-It will display a picture and all of the information you entered, 
-some of that information will be hidden unless this bottom arrow is clicked. 
-There are two filters at the top so you can view only podcuts you've marked as 
-favorites/best sellers, or by currently available products. 
-You can also remove all filters.
-There is another feature on the card which is the ability to edit or delete 
-the selected product. 
