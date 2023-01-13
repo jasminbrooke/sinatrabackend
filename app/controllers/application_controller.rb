@@ -25,9 +25,7 @@ class ApplicationController < Sinatra::Base
 
   get '/products/:id' do
     products = Product.where(user_id: params[:id])
-    results = []
-    products.each { |p| results << p.attributes.merge(profit: p.profit) }
-    results.to_json
+    products.to_json
   end
 
   post '/products' do
@@ -41,6 +39,8 @@ class ApplicationController < Sinatra::Base
       img_url: params[:img_url],
       user: User.find(params[:user_id])
     )
+    return { error: product.errors.messages }.to_json unless product.valid?
+    
     product.to_json
   end
 
@@ -56,6 +56,8 @@ class ApplicationController < Sinatra::Base
       img_url: params[:img_url],
       favorite: params[:favorite]
     )
+    return { error: product.errors.messages }.to_json unless product.valid?
+
     product.to_json
   end
 
@@ -68,8 +70,8 @@ class ApplicationController < Sinatra::Base
   # login
 
   post '/login' do
-    current_user = User.find_by!(username: params[:username])
-    if current_user 
+    current_user = User.find_by(username: params[:username])
+    if current_user
       return {
                user: current_user,
                products: current_user.products
